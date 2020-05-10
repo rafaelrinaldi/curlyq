@@ -4,7 +4,7 @@
 
 ## Install
 
-```
+```sh
 npm i curlyq
 ```
 
@@ -40,7 +40,7 @@ Options:
 
 ### Node.js
 
-```
+```ts
 const { curlyq } = require('curlyq')
 curlyq(`"That's a 'magic shoe."`) //=> “That’s a ‘magic’ shoe.”
 ```
@@ -49,11 +49,11 @@ curlyq(`"That's a 'magic shoe."`) //=> “That’s a ‘magic’ shoe.”
 
 You must include React as a dependency first:
 
-```
+```sh
 npm i react -S
 ```
 
-```
+```tsx
 import React, { FunctionComponent } from 'react'
 import { CurlyQ } from 'curlyq'
 
