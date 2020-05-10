@@ -1,0 +1,78 @@
+{
+  "name": "curlyq",
+  "version": "0.1.0",
+  "description": "Convert straight quotes to smart quotes",
+  "license": "MIT",
+  "repository": "rafaelrinaldi/curlyq",
+  "funding": "https://github.com/sponsors/rafaelrinaldi",
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "src/**",
+    "README.md"
+  ],
+  "author": {
+    "name": "Rafael Rinaldi",
+    "email": "rafael@rinaldi.io",
+    "url": "https://rinaldi.io"
+  },
+  "keywords": [
+    "curly",
+    "quote",
+    "quotes",
+    "smart",
+    "straight"
+  ],
+  "main": "dist/curlyq.cjs.js",
+  "module": "dist/curlyq.es.js",
+  "bin": "dist/cli.cjs.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build:cli": "rollup -c rollup.config.cli.js --silent",
+    "build:module": "rollup -c rollup.config.module.js --silent",
+    "build:types": "tsc -p tsconfig.build.json",
+    "build": "npm run build:module && npm run build:cli && npm run build:types",
+    "prebuild": "npm run cleanup",
+    "cleanup": "rm -rf dist",
+    "test": "jest --silent",
+    "format": "prettier-standard {src,test}/** --format",
+    "prepare": "npm run build -s",
+    "release": "npm run prepare -s && npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "dependencies": {
+    "is-text-path": "^2.0.0",
+    "smartquotes": "^2.3.1",
+    "get-stdin": "^7.0.0"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-json": "^4.0.3",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-typescript": "^4.1.1",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.2",
+    "@types/jest": "^25.2.1",
+    "husky": "^4.2.5",
+    "jest": "^25.3.0",
+    "lint-staged": "^10.2.2",
+    "prettier-standard": "^16.3.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^1.0.0",
+    "rollup-plugin-preserve-shebangs": "^0.2.0",
+    "rollup-plugin-sourcemaps": "^0.6.2",
+    "rollup-plugin-terser": "^5.3.0",
+    "ts-jest": "^25.5.1",
+    "tslib": "^1.11.2",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format -s"
+    }
+  }
+}
