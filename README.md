@@ -1,4 +1,4 @@
-# curlyq
+# curlyq [![Actions Status](https://github.com/rafaelrinaldi/curlyq/workflows/ci/badge.svg)](https://github.com/rafaelrinaldi/curlyq/actions)
 
 >Convert straight quotes to smart quotes
 
