@@ -5,7 +5,7 @@ type PatternsAndSubstitutions = [RegExp, string | Function][]
 
 export const replacements = (library as PatternsAndSubstitutions).filter(
   ([_, substitution]) => {
-    if (typeof substitution === 'function') return substitution(false)
+    if (typeof substitution === 'function') return substitution(true)
     return substitution
   }
 )
