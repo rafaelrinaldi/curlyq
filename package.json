@@ -38,7 +38,7 @@
     "test": "jest --silent",
     "format": "prettier-standard {src,test}/** --format",
     "prepare": "npm run build -s",
-    "release": "npm run prepare -s && npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "release": "npm run prepare -s && npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish --access=public"
   },
   "dependencies": {
     "is-text-path": "^2.0.0",
