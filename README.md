@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-npm i curlyq
+npm i @rafaelrinaldi/curlyq
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ Options:
 ### Node.js
 
 ```ts
-const { curlyq } = require('curlyq')
+const { curlyq } = require('@rafaelrinaldi/curlyq')
 curlyq(`"That's a 'magic shoe."`) //=> “That’s a ‘magic’ shoe.”
 ```
 
@@ -55,7 +55,7 @@ npm i react -S
 
 ```tsx
 import React, { FunctionComponent } from 'react'
-import { CurlyQ } from 'curlyq'
+import { CurlyQ } from '@rafaelrinaldi/curlyq'
 
 export const App: FunctionComponent = () => (
   <CurlyQ>

@@ -1,5 +1,5 @@
 {
-  "name": "curlyq",
+  "name": "@rafaelrinaldi/curlyq",
   "version": "0.1.0",
   "description": "Convert straight quotes to smart quotes",
   "license": "MIT",
